@@ -1,0 +1,50 @@
+{
+  "name": "tsuyukusa_gulp",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsuyukusa-rk/tsuyukusa_gulp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsuyukusa-rk/tsuyukusa_gulp/issues"
+  },
+  "homepage": "https://github.com/tsuyukusa-rk/tsuyukusa_gulp",
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "backbone.marionette": "^2.4.1",
+    "jquery": "^1.11.3",
+    "lodash": "^3.5.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-stylus": "~2.1.0",
+    "gulp-ejs": "~1.2.1",
+    "run-sequence": "~1.1.5",
+    "gulp-webpack": "~1.5.0",
+    "gulp-webserver": "~0.9.1",
+    "del": "~2.1.0",
+    "gulp-plumber": "~1.0.1",
+    "merge-stream": "~1.0.0",
+    "lodash": "~3.10.1",
+    "webpack": "~1.12.9",
+    "ejs-loader": "~0.2.1",
+    "html-loader": "~0.4.0",
+    "underscore": "^1.8.3",
+    "underscore-template-loader": "~0.5.2",
+    "webpack-stream": "~2.2.0",
+    "vinyl-named": "~1.1.0",
+    "gulp-foreach": "~0.1.0",
+    "file-loader": "~0.8.5",
+    "url-loader": "~0.5.7",
+    "webpack-espower-loader": "~1.0.1",
+    "espower-loader": "~1.0.0",
+    "gulp-load-plugins": "~1.1.0"
+  }
+}
