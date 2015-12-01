@@ -26,8 +26,8 @@ var $ = require('gulp-load-plugins')({
 });
 
 // ファイル削除
-gulp.task('clean', function(callback) {
-  return del(path.dest, callback);
+gulp.task('clean', function() {
+  return del(path.dest);
 });
 
 // ejs（テンプレートエンジン）の設定

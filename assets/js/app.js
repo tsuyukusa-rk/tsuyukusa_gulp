@@ -6,7 +6,7 @@ $(function() {
     var router = require('./routers/router');
 
     // ヘッダー
-    var headerView = require('./views/headerView');
+    var headerView = require('./views/common/headerView');
 
     // リージョン
     app.addRegions({

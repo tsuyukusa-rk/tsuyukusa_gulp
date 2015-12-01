@@ -19,7 +19,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { html: /\.html$/, loader: 'html-loader' },
+            { test: /\.html$/, loader: 'html-loader' },
             { test: /\.ejs$/, loader: 'ejs-loader' },
             { test: /\.html/, loader: "underscore-template-loader" }
         ]
