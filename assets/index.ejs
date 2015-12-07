@@ -1,83 +1,44 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
 
-<link href="http://tsuyu9sa.com/" rel="canonical">
-<link href="http://tsuyu9sa.com/" rel="index">
+    <link href="http://tsuyu9sa.com/" rel="canonical">
+    <link href="http://tsuyu9sa.com/" rel="index">
 
-<title>『ツユクサ』オフィシャルサイト</title>
-<meta name="author" content="ツユクサ">
-<meta name="code" scheme="081">
-<meta name="description" content="東京都・神奈川県で音楽活動を行なうアーティスト『ツユクサ』のオフィシャルサイト">
-<meta name="keywords" content="東京都,神奈川県,弾き語り,ツユクサ,アーティスト,音楽">
-<meta name="viewport" content="width=device-width">
-<link rel="shortcut icon" href="/img/favicon4.ico" />
+    <title>『ツユクサ』オフィシャルサイト</title>
+    <meta name="author" content="ツユクサ">
+    <meta name="code" scheme="081">
+    <meta name="description" content="東京都・神奈川県で音楽活動を行なうアーティスト『ツユクサ』のオフィシャルサイト">
+    <meta name="keywords" content="東京都,神奈川県,弾き語り,ツユクサ,アーティスト,音楽">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/img/favicon4.ico" />
 
-<!--  css  -->
-<link href="/css/reset.css" media="screen" rel="stylesheet" type="text/css">
-<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
-<link href="/css/jquery.remodal.css" media="screen" rel="stylesheet" type="text/css">
-<link href="/jplayer/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css">
+    <!--  css  -->
+    <link href="/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/css/jquery.remodal.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="/jplayer/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css">
 
-<!--  js  -->
-<script type="text/javascript" src="/js/app.js"></script>
-<!-- <script type="text/javascript" src="/js/common.js"></script> -->
-<!-- <script type="text/javascript" src="/jplayer/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="/jplayer/jplayer.playlist.min.js"></script> -->
+    <!--  js  -->
+    <script type="text/javascript" src="/js/app.js"></script>
+    <!-- <script type="text/javascript" src="/js/common.js"></script> -->
+    <!-- <script type="text/javascript" src="/jplayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="/jplayer/jplayer.playlist.min.js"></script> -->
 </head>
 
 <body>
 
 <div class="wrap">
 
-<!--  ヘッダー  -->
-  <div id="header" class="header"></div>
-<!--  // ヘッダー  -->
+    <!--  ヘッダー  -->
+    <div id="header" class="header"></div>
+    <!--  // ヘッダー  -->
 
-  <div id="mainArea">
-  <!--  コンテンツ上部  -->
-    <div class="main">
-      <ul class="accordion">
-        <li class="biography">
-          <h3>Biography</h3>
-          <dl>
-            <dt> 「侘び・寂び」などの世界観をテーマとした楽曲制作、弾き語りによるライブ活動を行なうアーティスト。<br>
-              主に、渋谷を拠点にしている。音源は、打ち込みを交えたものを自主制作。<br>
-            </dt>
-            <dd> <span>音源の試聴</span><br>
-              &#9657;<a href="https://myspace.com/tsuyukusa" target="_blank">myspace</a><br>
-            </dd>
-            <dd> <span>その他SNS</span><br>
-              &#9657;<a href="https://www.facebook.com/tsuyukusa.music" target="_blank">facebook</a><br>
-              &#9657;<a href="./blog/index.php" target="_blank">Blog</a><br>
-            </dd>
-            <dd class="biographyImg"> <img src="img/biography.jpg" alt=""> </dd>
-          </dl>
-        </li>
-        <li class="information">
-          <h3>Various information</h3>
-          <dl>
-            <dt>コンテンツ追加（2015/05/11）</dt>
-            <dd class="informationTxt">Songsに『ムービースター』を追加</dd>
-            <dt>コンテンツ追加（2015/04/18）</dt>
-            <dd class="informationTxt">過去のスケジュール一覧追加</dd>
-            <dt>コンテンツ追加（2014/12/20）</dt>
-            <dd class="informationTxt">プレイヤー、ブログRSS等追加</dd>
-            <dt>本サイト開設（2014/12/01）</dt>
-            <dd class="informationTxt"> </dd>
-          </dl>
-        </li>
-        <li class="liveSchedule">
-        <h3>Live schedule</h3>
-          <dl class="scheduleApi">
-            <dt><a class="jsShowModal" href="">過去のスケジュール一覧を見る</a></dt>
-            <dd></dd>
-          </dl>
-          <p class="formLink"> チケットをご希望の方は<a href="#show" id="show">メールフォーム</a>にて、ご予約ください。 </p>
-        </li>
-      </ul>
-    </div>
+    <div id="mainArea">
+        <!--  コンテンツ上部  -->
+        <div id="mainAreaTop" class="mainAreaTop"></div>
+        <!--  //コンテンツ上部  -->
 
   <!--  コンテンツ下部  -->
     <div class="contentsBottom">
@@ -207,12 +168,12 @@ function initialize() {
 
             var content = entry.content; //記事の内容
             var snippet = entry.contentSnippet; //記事の要約
-	    	var publishedDate = entry.publishedDate; //投稿日
+            var publishedDate = entry.publishedDate; //投稿日
             var category = entry.categories[0]; //カテゴリー
 
            //タイトルを挿入
            $('#feed').append("<li><a href='" + link  +"'>"+ title +"</a></li>");
-		   $('#feed a').attr({target:"_blank"});
+           $('#feed a').attr({target:"_blank"});
           }
         }
       });

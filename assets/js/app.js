@@ -8,6 +8,9 @@ $(function() {
     // ヘッダー
     var headerView = require('./views/common/headerView');
 
+    // コンテンツエリア
+    var mainAreaTopView = require('./views/mainAreaTopView');
+
     // リージョン
     app.addRegions({
         'main': '#mainArea'
@@ -22,6 +25,10 @@ $(function() {
         // headerをインスタンス
         this.headerView = new headerView();
         this.headerView.render();
+
+        // mainAreaTopをインスタンス
+        this.mainAreaTopView = new mainAreaTopView();
+        this.mainAreaTopView.render();
 
         // ブラウザのハッシュ監視
         Backbone.history.start();
