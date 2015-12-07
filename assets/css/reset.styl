@@ -1,4 +1,8 @@
 @charset "utf-8";
+
+// webフォント Noto Sans Japanese の読み込み
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
 * {
     margin:0;
     padding:0;
@@ -6,7 +10,8 @@
 body {
     font-size:13px;
     letter-spacing: 0.13em;
-    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-family: 'Noto Sans Japanese', 'メイリオ', sans-serif;
+    font-weight: 200;
     color: #777;
 }
 li,dd{
@@ -19,7 +24,7 @@ table{
 
 h1,h2,h3,h4,h5,h6,p,table,ul,ol,dl{
     margin: 0;
-    font-weight: normal;
+    font-weight: 200;
 }
 
 img{
