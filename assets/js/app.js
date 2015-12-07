@@ -10,6 +10,7 @@ $(function() {
 
     // コンテンツエリア
     var mainAreaTopView = require('./views/mainAreaTopView');
+    var mainAreaBottomView = require('./views/mainAreaBottomView');
 
     // リージョン
     app.addRegions({
@@ -29,6 +30,10 @@ $(function() {
         // mainAreaTopをインスタンス
         this.mainAreaTopView = new mainAreaTopView();
         this.mainAreaTopView.render();
+
+        // mainAreaBottomをインスタンス
+        this.mainAreaBottomView = new mainAreaBottomView();
+        this.mainAreaBottomView.render();
 
         // ブラウザのハッシュ監視
         Backbone.history.start();
