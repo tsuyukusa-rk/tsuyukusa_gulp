@@ -5,8 +5,9 @@ $(function() {
     // ルーター
     var router = require('./routers/router');
 
-    // ヘッダー
+    // 共通エリア
     var headerView = require('./views/common/headerView');
+    var footerView = require('./views/common/footerView');
 
     // コンテンツエリア
     var mainAreaTopView = require('./views/mainAreaTopView');
@@ -34,6 +35,10 @@ $(function() {
         // mainAreaBottomをインスタンス
         this.mainAreaBottomView = new mainAreaBottomView();
         this.mainAreaBottomView.render();
+
+        // footerViewをインスタンス
+        this.footerView = new footerView();
+        this.footerView.render();
 
         // ブラウザのハッシュ監視
         Backbone.history.start();
