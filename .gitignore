@@ -5,8 +5,8 @@ dist/
 .sass-cache/
 node_modules/
 MongoDB/
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 
 
 # 下階層全てのフォルダ内で ".DS_Store" ファイルを無視したい
