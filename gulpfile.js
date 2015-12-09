@@ -17,7 +17,7 @@ var pathes = require('path');
 // パスを定義
 var path = {
     assets: './assets',
-    dest: './dist'
+    dest: './server/public'
 };
 
 var $ = require('gulp-load-plugins')({

@@ -14,6 +14,9 @@ var routes = require('./modules/routes/router.js');
 var app = express();
 module.exports = app;
 
+// ドキュメントルートの設定
+app.use(express.static('./public'));
+
 // CRUD (create、read、update、delete) 操作と HTTP メソッドとが 1 対 1 に対応付けられること
 // サーバー上にリソースを作成するためには POST
 // リソースを取得するためには GET
@@ -44,15 +47,15 @@ var server = http.createServer(app);
 // portの指定
 server.listen(3000);
 // htmlファイルの読み込み
-server.on('request', function(req,res) {
-    fs.readFile('public/index.html', 'utf-8', function(err,data) {
-        if(err){
-            res.writeHead(404,{'content-Type': 'text/plain'});
-            res.write("not found");
-            return res.end();
-        }
-        res.writeHead(200,{'content-Type': 'text/html'});
-        res.write(data);
-        res.end();
-    });
-});
+// server.on('request', function(req,res) {
+//     fs.readFile('public/index.html', 'utf-8', function(err,data) {
+//         if(err){
+//             res.writeHead(404,{'content-Type': 'text/plain'});
+//             res.write("not found");
+//             return res.end();
+//         }
+//         res.writeHead(200,{'content-Type': 'text/html'});
+//         res.write(data);
+//         res.end();
+//     });
+// });
