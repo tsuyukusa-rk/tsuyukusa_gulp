@@ -21,7 +21,8 @@ module.exports = {
         loaders: [
             { test: /\.html$/, loader: 'html-loader' },
             { test: /\.ejs$/, loader: 'ejs-loader' },
-            { test: /\.html/, loader: "underscore-template-loader" }
+            { test: /\.html/, loader: "underscore-template-loader" },
+            { test: /\.js$/, exclude: /node_modules/, loader: "babel?presets[]=es2015" }
         ]
     },
     plugins: [

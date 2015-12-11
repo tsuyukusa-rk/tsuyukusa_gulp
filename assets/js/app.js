@@ -1,5 +1,12 @@
 $(function() {
 
+    // es2015お試し
+    var human = require('./class');
+    var people = require('./classExtends');
+    human.helloStatic();
+    var human = new human('kondo');
+    var people = new people('kondo');
+
     var app = new Marionette.Application();
 
     // ルーター

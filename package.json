@@ -45,6 +45,10 @@
     "url-loader": "~0.5.7",
     "webpack-espower-loader": "~1.0.1",
     "espower-loader": "~1.0.0",
-    "gulp-load-plugins": "~1.1.0"
+    "gulp-load-plugins": "~1.1.0",
+    "gulp-babel": "~6.1.1",
+    "babel-core": "~6.3.17",
+    "babel-loader": "~6.2.0",
+    "babel-preset-es2015": "~6.3.13"
   }
 }
