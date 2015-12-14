@@ -1,8 +1,8 @@
 $(function() {
 
     // es2015お試し
-    var human = require('./class');
-    var people = require('./classExtends');
+    var human = require('./es2015/class');
+    var people = require('./es2015/classExtends');
     human.helloStatic();
     var human = new human('kondo');
     var people = new people('kondo');
