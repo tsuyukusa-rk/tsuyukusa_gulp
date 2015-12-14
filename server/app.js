@@ -25,19 +25,19 @@ app.use(express.static('./public'));
 
 // getによるリクエストの挙動
 // リソースの取得
-app.get('/', routes.get);
+app.get('/blog', routes.get);
 
 // postによるリクエストの挙動
 // リソースの新規追加
-app.post('/', routes.post);
+app.post('/blog', routes.post);
 
 // putによるリクエストの挙動
 // リソースの書き換え
-app.put('/', routes.put);
+app.put('/blog', routes.put);
 
 // deleteによるリクエストの挙動
 // リソースの削除
-app.delete('/', routes.delete);
+app.delete('/blog', routes.delete);
 
 /*
 * サーバーの起動
