@@ -1,24 +1,65 @@
 .mainAreaTop {
     .mainAreaTopLeft {
+        width: 640px;
+        float: left;
         .tabTitles {
             clearfix();
             border-bottom: 1px solid $borderColor;
             li {
                 float: left;
-                width: 33%;
-                border-left: 1px solid $borderColor;
+                width: 212px;
+                height: 45px;
+                border-right: 1px solid $borderColor;
                 text-align: center;
+                font-size: 16px;
+                padding: 20px 0 0;
+                cursor: pointer;
                 &:first-child {
-                   border-left: none;
+                    width: 213px;
                 }
             }
         }
         .tabContents {
-            overflow: scroll;
-            height: 300px;
+            .tabContentsLi {
+                width: 580px;
+                height: 284px;
+                padding: 20px 30px;
+            }
+            .liveSchedule {
+                overflow-y: scroll;
+                ul {
+                    li {
+                        margin: 20px 0 0;
+                        &:first-child {
+                            margin: 0;
+                        }
+                        > dl {
+                            dt {
+                                span {
+                                    font-weight: 300;
+                                    a {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .biography {
+                dl {
+                    dt {
+
+                    }
+                    dd {
+                        margin: 10px 0 0;
+                    }
+                }
+            }
         }
     }
     .mainAreaTopRight {
-
+        width: 290px;
+        float: left;
+        padding: 15px;
     }
 }

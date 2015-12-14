@@ -27,13 +27,17 @@ module.exports = Marionette.ItemView.extend({
             // トップページ表示用のHTML格納場所
             var scheduleArray = [];
 
+            scheduleArray.push('<ul>');
+
             // スケジュールの数だけ回す
             for(var i = 0; i < json.schedule.length; i++){
-                scheduleArray.push('<dt><span>' + json.schedule[i].date + '<br><a href="' + json.schedule[i].url + '" target="_blank">' + json.schedule[i].place + '</a></span></dt><dd class="liveScheduleTxt">open&nbsp;' + json.schedule[i].time[0].open + '&nbsp;/&nbsp;start&nbsp;' + json.schedule[i].time[0].start + '<br>ticket&nbsp;' + json.schedule[i].ticket + '</dd>');
+                scheduleArray.push('<li><dl><dt><span>' + json.schedule[i].date + '&nbsp;<a href="' + json.schedule[i].url + '" target="_blank">' + json.schedule[i].place + '</a></span></dt><dd class="liveScheduleTxt">open&nbsp;' + json.schedule[i].time[0].open + '&nbsp;/&nbsp;start&nbsp;' + json.schedule[i].time[0].start + '&nbsp;/&nbsp;ticket&nbsp;' + json.schedule[i].ticket + '</dd></dl></li>');
             }
 
+            scheduleArray.push('</ul>');
+
             // HTML書き出し処理
-            $('#tabContents').prepend(scheduleArray);
+            $('#liveSchedule').html(scheduleArray.join(''));
 
         };
 
@@ -66,13 +70,16 @@ module.exports = Marionette.ItemView.extend({
 
         // 一旦activeクラスをクリアする
         $(this.el).find('li').removeClass('active');
+        $('#tabContents').find('.tabContentsLi').hide();
 
         if(thisId == tab01) {
         // ライブスケジュールのタブの時
             $('#' + tab01).addClass('active');
+            $('.liveSchedule').show();
         } else if(thisId == tab02) {
         // バイオグラフィーのタブの時
             $('#' + tab02).addClass('active');
+            $('.biography').show();
         } else if(thisId == tab03) {
         // ブログのタブが押された時
             $('#' + tab03).addClass('active');
