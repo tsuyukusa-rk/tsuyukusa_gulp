@@ -1,11 +1,26 @@
+// var
 mainColor = #263260
 $txtColor = #777
 $borderColor = #e2dfdb
 $borderColorDark = #a79d8f
 
+// mixin
+clearfix() {
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+
+// common
 a:link, a visited {
   color: #442660;
 }
 a:hover {
   text-decoration: underline;
+}
+.wrap{
+    width: 960px;
+    margin: 0 auto;
 }

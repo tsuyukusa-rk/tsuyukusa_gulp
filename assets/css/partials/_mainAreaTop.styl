@@ -1,7 +1,17 @@
 .mainAreaTop {
     .mainAreaTopLeft {
         .tabTitles {
-
+            clearfix();
+            border-bottom: 1px solid $borderColor;
+            li {
+                float: left;
+                width: 24%;
+                border-left: 1px solid $borderColor;
+                text-align: center;
+                &:first-child {
+                   border-left: none;
+                }
+            }
         }
         .tabContents {
 
