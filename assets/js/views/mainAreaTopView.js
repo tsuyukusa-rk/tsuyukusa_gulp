@@ -2,7 +2,7 @@
 var mainAreaTopTmpl = require('../templates/mainAreaTopView');
 
 // ajax
-var apiCall = require('../module/apiCall');
+var scheduleModel = require('../models/scheduleModel');
 
 module.exports = Marionette.ItemView.extend({
 
@@ -18,13 +18,43 @@ module.exports = Marionette.ItemView.extend({
         'click li': 'changeTabCtrl'
     },
 
+    // レンダリング後の処理
+    onRender: function() {
+
+        // スケジュール埋め込み処理
+        var doBuild = function(json) {
+
+            // トップページ表示用のHTML格納場所
+            var scheduleArray = [];
+
+            // スケジュールの数だけ回す
+            for(var i = 0; i < json.schedule.length; i++){
+                scheduleArray.push('<dt><span>' + json.schedule[i].date + '<br><a href="' + json.schedule[i].url + '" target="_blank">' + json.schedule[i].place + '</a></span></dt><dd class="liveScheduleTxt">open&nbsp;' + json.schedule[i].time[0].open + '&nbsp;/&nbsp;start&nbsp;' + json.schedule[i].time[0].start + '<br>ticket&nbsp;' + json.schedule[i].ticket + '</dd>');
+            }
+
+            // HTML書き出し処理
+            $('#tabContents').prepend(scheduleArray);
+
+        };
+
+        // JSONを取得し、書き出す
+        var model = new scheduleModel();
+        model.fetch({
+            success: function(collection, res, options) {
+                doBuild(res);
+            },
+            error: function() {
+                alert('エラーが発生しました。');
+            }
+        });
+
+    },
+
     /*
     * タブ切り替え時の処理
     * @param e
     */
     changeTabCtrl: function(e) {
-
-        console.log('タブをクリック');
 
         // 変数を定義
         var
@@ -34,60 +64,20 @@ module.exports = Marionette.ItemView.extend({
             tab02 = 'tabBiography',
             tab03 = 'tabBlog';
 
+        // 一旦activeクラスをクリアする
+        $(this.el).find('li').removeClass('active');
+
         if(thisId == tab01) {
         // ライブスケジュールのタブの時
-            this.tab01Fn(tab01);
+            $('#' + tab01).addClass('active');
         } else if(thisId == tab02) {
         // バイオグラフィーのタブの時
-            this.tab02Fn(tab02);
+            $('#' + tab02).addClass('active');
         } else if(thisId == tab03) {
         // ブログのタブが押された時
-            this.tab03Fn(tab03);
+            $('#' + tab03).addClass('active');
         }
 
-    },
-
-    /*
-    * ライブスケジュールが押された時の処理
-    * @param elName:タブのセレクタ
-    */
-   tab01Fn: function(elName) {
-
-        console.log(elName);
-
-        var
-            // api用のsettingを定義
-            setting = {
-                url: '/js/data/schedule.json'
-            },
-            // スケジュール埋め込み処理
-            doBuild = function(json) {
-
-                var scheduleArray = []; // トップページ表示用のHTML格納場所
-                var scheduleArrayModal = []; // モーダル表示用のHTML格納場所
-
-                // スケジュールの数だけ回す
-                for(var i = 0; i < json.schedule.length; i++){
-
-                    if(i < 4){
-                    // スケジュールのデータが、３以下の場合はトップページへ
-                        scheduleArray.push('<dt><span>' + json.schedule[i].date + '<br><a href="' + json.schedule[i].url + '" target="_blank">' + json.schedule[i].place + '</a></span></dt><dd class="liveScheduleTxt">open&nbsp;' + json.schedule[i].time[0].open + '&nbsp;/&nbsp;start&nbsp;' + json.schedule[i].time[0].start + '<br>ticket&nbsp;' + json.schedule[i].ticket + '</dd>');
-
-                    } else {
-                    // スケジュールのデータが、４以上の場合はモーダルへ
-                        scheduleArrayModal.push('<dt><span>' + json.schedule[i].date + '<br><a href="' + json.schedule[i].url + '" target="_blank">' + json.schedule[i].place + '</a></span></dt><dd class="liveScheduleTxt">open&nbsp;' + json.schedule[i].time[0].open + '&nbsp;/&nbsp;start&nbsp;' + json.schedule[i].time[0].start + '<br>ticket&nbsp;' + json.schedule[i].ticket + '</dd>');
-                    }
-                }
-
-                // HTML書き出し処理
-                $('#tabContents').prepend(scheduleArray);
-                // $('.scheduleApiModal').append(scheduleArrayModal);
-
-            };
-
-        // JSONを取得し、書き出す
-        apiCall(setting, doBuild);
-
-   }
+    }
 
 });
