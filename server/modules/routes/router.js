@@ -25,6 +25,7 @@ mongoose.connect('mongodb://localhost/tsuyukusa');
 // mongoDB接続時のエラーハンドリング
 var blog;
 var db = mongoose.connection;
+var testDate;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log("Connected to 'blog' database");
@@ -36,6 +37,7 @@ db.once('open', function() {
             console.log("num of item => " + docs.length);
             for (var i = 0; i < docs.length; i++ ) {
                 console.log(docs[i]);
+                testDate = docs[i];
             }
             // mongoose.disconnect(); // mongodbへの接続を切断
             // process.exit();         // node.js終了
@@ -50,9 +52,13 @@ db.once('open', function() {
 module.exports = {
 
     get: function(req, res) {
-        // res.writeHead(200, {'Content-Type': 'text/html'});
-        // res.write('Hello World!');
-        // res.end();
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        // testDate = JSON.parse(testDate);
+        console.log(testDate);
+        res.write(testDate.id);
+        res.on('end', function() {
+
+        });
     },
 
     post: function (req, res) {
