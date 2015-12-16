@@ -6,8 +6,10 @@ var blogAreaArticleTmpl = '<li>'
                                     + '<% }); %>'
                                 + '</dl>'
                             + '</li>';
-
+// underscore
 var _ = require('underscore');
+// model
+var blogAreaArticleModel = require('../../models/blog/blogAreaArticleModel');
 
 module.exports = Marionette.ItemView.extend({
 
@@ -21,24 +23,38 @@ module.exports = Marionette.ItemView.extend({
     },
 
     // レンダリングした時の処理
-    render: function(data) {
+    render: function() {
 
-        // データがない場合は処理しない
-        if(typeof data == 'undefined') {
-            return false;
-        }
+        var
+            // モデルをインスタンス
+            articleModel = new blogAreaArticleModel(),
+            // this
+            that = this;
 
-        console.log(data[0]);
+        // 非同期通信
+        articleModel.fetch({
+            success: function(collection, res, options) {
+                that.createArticle(res, that);
+            },
+            error: function() {
+                alert('エラーが発生しました。');
+            }
+        });
+
+    },
+
+    // 記事を生成する
+    createArticle: function(data, that) {
 
         // セレクターとテンプレートを設定
         var
-            $el = $(this.el),
-            template = this.template;
+            $el = $(that.el),
+            template = that.template;
 
         // 書き出し処理
-        for(var i = 0; data[0].length > i; i++) {
-            var count = data[0].length - i;
-            _.each(data[0], function(obj, i) {
+        for(var i = 0; data.length > i; i++) {
+            var count = data.length - i;
+            _.each(data, function(obj, i) {
                 if(obj.index == count) {
                 // もしindexがcountと等しい場合に、HTMLにブログ文書を追加
                     $el.append(template(obj));

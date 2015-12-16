@@ -1,5 +1,4 @@
 // blog記事生成用
-var blogSampleData = new Array(require('../data/blogSampleData'));
 var blogAreaArticleView = require('../views/blog/blogAreaArticleView');
 
 module.exports = Backbone.Router.extend({
@@ -26,8 +25,8 @@ module.exports = Backbone.Router.extend({
         $('#mainArea').hide();
 
         // ビューをインスタンス
-        var blogAreaArticle = new blogAreaArticleView();
-        blogAreaArticle.render(blogSampleData);
+        var articleView = new blogAreaArticleView();
+        articleView.render();
 
         // 該当コンテンツを表示
         $('#blogArea').show();

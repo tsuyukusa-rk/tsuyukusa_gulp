@@ -1,5 +1,4 @@
-// テスト用データ
-module.exports = [
+[
     {
         "uploadDate": "2015/09/23",
         "category": "live",
@@ -48,4 +47,4 @@ module.exports = [
         "imgSrc1": "/img/blog/20150923_01.jpg",
         "index": 4
     }
-];
+]
