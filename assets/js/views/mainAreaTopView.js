@@ -83,6 +83,8 @@ module.exports = Marionette.ItemView.extend({
         } else if(thisId == tab03) {
         // ブログのタブが押された時
             $('#' + tab03).addClass('active');
+            // ブログページ遷移のためルーターを起動
+            Backbone.history.navigate('blog', true);
         }
 
     }
