@@ -1,7 +1,8 @@
 module.exports = Backbone.Model.extend({
 
     // 取得するurl
-    url: '/js/data/blogSampleData.json',
+    // url: '/js/data/blogSampleData.json',
+    url: '/blog',
 
     // パース
     parse: function(res) {

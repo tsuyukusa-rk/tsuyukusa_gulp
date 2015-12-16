@@ -36,7 +36,7 @@ module.exports = Marionette.ItemView.extend({
             success: function(collection, res, options) {
                 that.createArticle(res, that);
             },
-            error: function() {
+            error: function(collection, res, options) {
                 alert('エラーが発生しました。');
             }
         });

@@ -5,6 +5,7 @@ var express = require('express');
 var https = require('https');
 var http = require('http');
 var fs = require('fs');
+var mongoose = require('mongoose');
 // ルーティン設定処理の読み込み
 var routes = require('./modules/routes/router.js');
 
