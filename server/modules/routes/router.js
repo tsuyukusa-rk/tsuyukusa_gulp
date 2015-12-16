@@ -57,20 +57,14 @@ module.exports = {
 
     post: function (req, res) {
 
-        // インスタンスして、追加する
-        var blog = new blog({
-            index: Number,
-            imgSrc1: String,
-            text: Array,
-            title: String,
-            category: String,
-            uploadDate: String
-        });
+        console.log(req.body);
 
-        // saveでmongoに保存
-        blog.save(function(err) {
+        // createでmongoに保存
+        blog.create(req.body, function(err) {
             if(err) {
                 console.log(err);
+            } else {
+                console.log('保存');
             }
         });
 

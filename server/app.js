@@ -6,6 +6,7 @@ var https = require('https');
 var http = require('http');
 var fs = require('fs');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 // ルーティン設定処理の読み込み
 var routes = require('./modules/routes/router.js');
 
@@ -17,6 +18,8 @@ module.exports = app;
 
 // ドキュメントルートの設定
 app.use(express.static('./public'));
+// body-parserプラグインにより下記設定で、リクエストのパラメーターを取得できる
+app.use(bodyParser.urlencoded({extended: true}));
 
 // CRUD (create、read、update、delete) 操作と HTTP メソッドとが 1 対 1 に対応付けられること
 // サーバー上にリソースを作成するためには POST
