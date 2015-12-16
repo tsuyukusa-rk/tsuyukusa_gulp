@@ -6,12 +6,12 @@ var Schema = mongoose.Schema;
 
 // Defaultのスキーマから新しいスキーマを定義
 var blogSchema = new Schema({
-    index: Number
-    , imgSrc1: String
-    , text: Array
-    , title: String
-    , category: String
-    , uploadDate: String
+    index: Number,
+    imgSrc1: String,
+    text: Array,
+    title: String,
+    category: String,
+    uploadDate: String
 });
 
 // モデル化。model('[登録名]', '定義したスキーマクラス')
@@ -56,7 +56,24 @@ module.exports = {
     },
 
     post: function (req, res) {
-        res.send('Got a POST request');
+
+        // インスタンスして、追加する
+        var blog = new blog({
+            index: Number,
+            imgSrc1: String,
+            text: Array,
+            title: String,
+            category: String,
+            uploadDate: String
+        });
+
+        // saveでmongoに保存
+        blog.save(function(err) {
+            if(err) {
+                console.log(err);
+            }
+        });
+
     },
 
     put: function (req, res) {
