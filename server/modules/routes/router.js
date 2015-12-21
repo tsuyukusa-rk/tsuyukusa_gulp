@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 
 // Defaultのスキーマから新しいスキーマを定義
 var blogSchema = new Schema({
+    _id: Schema.Types.ObjectId,
     index: Number,
     imgSrc1: String,
     text: Array,
@@ -29,8 +30,10 @@ db.on('open', function() {
     console.log("Connected to 'blog' database");
 });
 
+// CRUD (create、read、update、delete) 操作
 module.exports = {
 
+    // read
     get: function(req, res) {
 
         // レスポンスのコンテンツタイプを定義
@@ -55,6 +58,7 @@ module.exports = {
 
     },
 
+    // create
     post: function (req, res) {
 
         console.log(req.body);
@@ -70,12 +74,43 @@ module.exports = {
 
     },
 
+    // update
     put: function (req, res) {
-        res.send('Got a PUT request at /user');
+
+        var id = req.params.id;
+        console.log('Updating wine: ' + id);
+
+        var updateBlog = req.body;
+        delete updateBlog._id;
+
+        // 検索して、書き換え
+        blog.findByIdAndUpdate(id, updateBlog, function(err, result) {
+            if (err) {
+                res.send({'error': 'An error has occurred - ' + err});
+            } else {
+                console.log('Success: ' + result + ' document(s) updated');
+                res.send('更新されました。');
+            }
+        });
+
     },
 
+    // delete
     delete: function (req, res) {
-        res.send('Got a DELETE request at /user');
+
+        var id = req.params.id;
+        console.log('Deleting blog: ' + id);
+
+        // 検索して、削除する
+        blog.findByIdAndRemove(id, function(err, result) {
+            if (err) {
+                res.send({'error': 'An error has occurred - ' + err});
+            } else {
+                console.log('Success: ' + result + ' document(s) deleted');
+                res.send('削除されました。');
+            }
+        });
+
     }
 
 };

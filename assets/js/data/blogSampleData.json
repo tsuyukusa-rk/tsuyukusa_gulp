@@ -1,5 +1,6 @@
 [
     {
+        "id": "",
         "uploadDate": "2015/09/23",
         "category": "live",
         "title": "ライブについてライブについてライブについて",
@@ -12,6 +13,7 @@
         "index": 1
     },
     {
+        "id": "",
         "uploadDate": "2015/09/24",
         "category": "songs",
         "title": "曲作り・宅録曲作り・宅録",
@@ -24,6 +26,7 @@
         "index": 2
     },
     {
+        "id": "",
         "uploadDate": "2015/09/25",
         "category": "bookReviews",
         "title": "最近読んだ本最近読んだ本",
@@ -36,6 +39,7 @@
         "index": 3
     },
     {
+        "id": "",
         "uploadDate": "2015/09/26",
         "category": "eventsOfOneDay",
         "title": "ある日の出来事ある日の出来事",

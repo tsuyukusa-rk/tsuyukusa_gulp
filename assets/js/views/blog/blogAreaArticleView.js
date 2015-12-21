@@ -1,4 +1,4 @@
-var blogAreaArticleTmpl = '<li>'
+var blogAreaArticleTmpl = '<li data-id="<%= _id %>">'
                                 + '<dl>'
                                     + '<dt><%= title %><br><span><%= uploadDate %></span></dt>'
                                     + '<% _.each(text, function(el, i) { %>'

@@ -7,6 +7,8 @@ var http = require('http');
 var fs = require('fs');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var connect        = require('connect');
+var methodOverride = require('method-override');
 // ルーティン設定処理の読み込み
 var routes = require('./modules/routes/router.js');
 
@@ -20,6 +22,8 @@ module.exports = app;
 app.use(express.static('./public'));
 // body-parserプラグインにより下記設定で、リクエストのパラメーターを取得できる
 app.use(bodyParser.urlencoded({extended: true}));
+// put、delete用に使用するキーを設定。パラメーターで_methodを渡す。
+app.use( methodOverride('_method') );
 
 // CRUD (create、read、update、delete) 操作と HTTP メソッドとが 1 対 1 に対応付けられること
 // サーバー上にリソースを作成するためには POST
@@ -37,11 +41,11 @@ app.post('/blog', routes.post);
 
 // putによるリクエストの挙動
 // リソースの書き換え
-app.put('/blog', routes.put);
+app.put('/blog/:id', routes.put);
 
 // deleteによるリクエストの挙動
 // リソースの削除
-app.delete('/blog', routes.delete);
+app.delete('/blog/:id', routes.delete);
 
 /*
 * サーバーの起動
