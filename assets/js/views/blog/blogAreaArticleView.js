@@ -6,6 +6,8 @@ var blogAreaArticleTmpl = '<li data-id="<%= _id %>">'
                                     + '<% }); %>'
                                 + '</dl>'
                             + '</li>';
+
+var test = require('../../templates/blog/_blogAreaArticleView');
 // underscore
 var _ = require('underscore');
 // model
@@ -15,7 +17,8 @@ module.exports = Marionette.ItemView.extend({
 
     el: '#blogAreaArticle',
 
-    template: _.template(blogAreaArticleTmpl),
+    // template: _.template(blogAreaArticleTmpl),
+    template: test,
 
     // 初期処理
     initialize: function() {

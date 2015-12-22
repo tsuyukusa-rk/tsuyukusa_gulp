@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
 // Defaultのスキーマから新しいスキーマを定義
 var blogSchema = new Schema({
-    _id: Schema.Types.ObjectId,
+    // _id: Schema.Types.ObjectId,
     index: Number,
     imgSrc1: String,
     text: Array,
@@ -67,6 +67,7 @@ module.exports = {
         blog.create(req.body, function(err) {
             if(err) {
                 console.log(err);
+                console.log('エラーだよ');
             } else {
                 console.log('保存');
             }
@@ -79,6 +80,7 @@ module.exports = {
 
         var id = req.params.id;
         console.log('Updating wine: ' + id);
+        console.log(req.params);
 
         var updateBlog = req.body;
         delete updateBlog._id;
@@ -100,6 +102,7 @@ module.exports = {
 
         var id = req.params.id;
         console.log('Deleting blog: ' + id);
+        console.log(req.params);
 
         // 検索して、削除する
         blog.findByIdAndRemove(id, function(err, result) {
