@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 
 // Defaultのスキーマから新しいスキーマを定義
 var blogSchema = new Schema({
+    // Schema.Types.ObjectIdを入れるとpostができなくなる
     // _id: Schema.Types.ObjectId,
     index: Number,
     imgSrc1: String,
