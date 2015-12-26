@@ -44,9 +44,11 @@ module.exports = Marionette.ItemView.extend({
         // JSONを取得し、書き出す
         var model = new scheduleModel();
         model.fetch({
+            // 成功した場合
             success: function(collection, res, options) {
                 doBuild(res);
             },
+            // エラーだった場合
             error: function() {
                 alert('エラーが発生しました。');
             }
