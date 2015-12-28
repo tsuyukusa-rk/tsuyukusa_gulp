@@ -64,6 +64,10 @@ var files = [
     {
         from: path.assets + '/**/*.json',
         to: path.dest
+    },
+    {
+        from: path.assets + '/audio/**/*',
+        to: path.dest + '/audio'
     }
 ];
 gulp.task('copy', function () {
