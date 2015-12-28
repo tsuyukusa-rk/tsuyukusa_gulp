@@ -1,118 +1,117 @@
+/*
+* mixin
+*/
+
+// transform
+transformFn(num) {
+    -webkit-transform: scale(num);
+    transform: scale(num);
+    transition: all .4s;
+}
+
+/*
+* style
+*/
+
+// ボックス
 .mainAreaTop {
     overflow: hidden;
-    .mainAreaTopLeft {
-        width: 639px;
-        height: 386px;
+}
+
+// カラム
+.mainAreaTopLeft {
+    width: 639px;
+    height: 386px;
+    float: left;
+    border-right: 1px solid #e2dfdb;
+}
+.mainAreaTopRight {
+    width: 280px;
+    float: left;
+    padding: 20px;
+    img {
+        max-width: 280px;
+    }
+}
+
+// デティール
+.tabTitles {
+    clearfix();
+    border-bottom: 1px solid $borderColor;
+    li {
         float: left;
-        border-right: 1px solid #e2dfdb;
-        .tabTitles {
-            clearfix();
-            border-bottom: 1px solid $borderColor;
-            li {
-                float: left;
-                width: 212px;
-                height: 35px;
-                border-right: 1px solid $borderColor;
-                text-align: center;
-                font-size: 16px;
-                padding: 10px 0 0;
-                cursor: pointer;
-                position: relative;
-                &:first-child {
-                    width: 213px;
-                }
-                &:last-child {
-                    border-right: none;
-                }
-                &:after {
-                    content: "";
-                    position: absolute;
-                    z-index: -1;
-                    display: block;
-                    top: 0%;
-                    left: 0%;
-                    width: 100%;
-                    height: 100%;
-                    -webkit-transform: scale(.5);
-                    transform: scale(.5);
-                    transition: all .4s;
-                    // border-radius: 30px;
-                }
-                &:hover {
-                    color: #fff;
-                }
-                &:hover:after {
-                    content: "";
-                    background: mainColor;
-                    -webkit-transform: scale(1);
-                    transform: scale(1);
-                    transition: all .4s;
-                }
-                &.active {
-                    color: #fff;
-                    cursor: default;
-                    &:after {
-                        content: "";
-                        background: mainColor;
-                        position: absolute;
-                        z-index: -1;
-                        display: block;
-                        top: 0%;
-                        left: 0%;
-                        width: 100%;
-                        height: 100%;
-                        -webkit-transform: scale(1);
-                        transform: scale(1);
-                        transition: all .4s;
-                    }
-                }
+        width: 212px;
+        height: 35px;
+        border-right: 1px solid $borderColor;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 0 0;
+        cursor: pointer;
+        position: relative;
+        &:first-child {
+            width: 213px;
+        }
+        &:last-child {
+            border-right: none;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            display: block;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            transformFn(.5);
+        }
+        &:hover {
+            color: #fff;
+        }
+        &:hover:after {
+            background: mainColor;
+            transformFn(1);
+        }
+        &.active {
+            color: #fff;
+            cursor: default;
+            &:after {
+                @extend .tabTitles li:after
+                @extend .tabTitles li:hover:after
             }
         }
-        .tabContents {
-            .tabContentsLi {
-                width: 580px;
-                height: 300px;
-                padding: 20px 30px;
-            }
-            .liveSchedule {
-                overflow-y: scroll;
-                ul {
-                    li {
-                        margin: 20px 0 0;
-                        &:first-child {
-                            margin: 0;
-                        }
-                        > dl {
-                            dt {
-                                span {
-                                    font-weight: 300;
-                                    a {
-                                    }
-                                }
-                            }
-                        }
-                    }
+    }
+}
+.tabContents {
+    .tabContentsLi {
+        width: 580px;
+        height: 300px;
+        padding: 20px 30px;
+    }
+    .liveSchedule {
+        overflow-y: scroll;
+        ul {
+            li {
+                margin: 20px 0 0;
+                &:first-child {
+                    margin: 0;
                 }
-            }
-            .biography {
-                display: none;
-                dl {
+                > dl {
                     dt {
-
-                    }
-                    dd {
-                        margin: 10px 0 0;
+                        span {
+                            font-weight: 300;
+                        }
                     }
                 }
             }
         }
     }
-    .mainAreaTopRight {
-        width: 280px;
-        float: left;
-        padding: 20px;
-        img {
-            max-width: 280px;
+    .biography {
+        display: none;
+        dl {
+            dd {
+                margin: 10px 0 0;
+            }
         }
     }
 }
