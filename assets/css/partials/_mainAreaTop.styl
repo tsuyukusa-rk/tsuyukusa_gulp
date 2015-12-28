@@ -1,5 +1,5 @@
 /*
-* mixin
+* commons
 */
 
 // transform
@@ -13,17 +13,18 @@ transformFn(num) {
 * style
 */
 
-// ボックス
+// container
 .mainAreaTop {
+    clearfix();
     overflow: hidden;
 }
 
-// カラム
+// culmn
 .mainAreaTopLeft {
     width: 639px;
     height: 386px;
     float: left;
-    border-right: 1px solid #e2dfdb;
+    border-right: 1px solid $borderColor;
 }
 .mainAreaTopRight {
     width: 280px;
