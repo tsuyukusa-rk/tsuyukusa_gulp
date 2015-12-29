@@ -68,6 +68,10 @@ var files = [
     {
         from: path.assets + '/audio/**/*',
         to: path.dest + '/audio'
+    },
+    {
+        from: path.assets + '/movie/**/*',
+        to: path.dest + '/movie'
     }
 ];
 gulp.task('copy', function () {
