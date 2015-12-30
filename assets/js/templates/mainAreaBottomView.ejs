@@ -13,28 +13,34 @@
     <dt>songs</dt>
     <dd>
         <ul>
-            <li id="audioArea1">
-                <audio controls id="audio1">
+            <li id="audioArea1" class="playBox">
+                <audio id="audio1">
                     <source src="/audio/mp3/movie_star.mp3">
                 </audio>
                 <dl>
                     <dt>Movie Star</dt>
-                    <dd id="play1">再生</dd>
-                    <dd id="pause1">停止</dd>
-                    <dd id="time1">時間</dd>
-                    <dd id="currentTime1">時間</dd>
+                    <dd id="play1" class="playIcon"></dd>
+                    <dd id="pause1" class="pauseIcon"><img src="/img/audioPauseIcon.png" alt="一時停止"></dd>
+                    <dd id="stop1" class="stopIcon"></dd>
+                    <!-- <dd id="time1" class="timeIcon">時間</dd> -->
+                    <dd id="prevCtrl1" class="prevCtrlIcon"><img src="/img/audioPrevIcon.png" alt="巻き戻す"></dd>
+                    <dd id="nextCtrl1" class="nextCtrlIcon"><img src="/img/audioNextIcon.png" alt="早送り"></dd>
+                    <dd id="currentTime1" class="currentTimeIcon">時間</dd>
                 </dl>
             </li>
-            <li id="audioArea2">
-                <audio controls id="audio2">
+            <li id="audioArea2" class="playBox">
+                <audio id="audio2">
                     <source src="/audio/mp3/amaoto.mp3">
                 </audio>
                 <dl>
                     <dt>雨音</dt>
-                    <dd id="play2">再生</dd>
-                    <dd id="pause2">停止</dd>
-                    <dd id="time2">時間</dd>
-                    <dd id="currentTime2">時間</dd>
+                    <dd id="play2" class="playIcon"></dd>
+                    <dd id="pause2" class="pauseIcon"><img src="/img/audioPauseIcon.png" alt="一時停止"></dd>
+                    <dd id="stop2" class="stopIcon"></dd>
+                    <!-- <dd id="time2" class="timeIcon">時間</dd> -->
+                    <dd id="prevCtrl2" class="prevCtrlIcon"><img src="/img/audioPrevIcon.png" alt="巻き戻す"></dd>
+                    <dd id="nextCtrl2" class="nextCtrlIcon"><img src="/img/audioNextIcon.png" alt="早送り"></dd>
+                    <dd id="currentTime2" class="currentTimeIcon">時間</dd>
                 </dl>
             </li>
         </ul>
