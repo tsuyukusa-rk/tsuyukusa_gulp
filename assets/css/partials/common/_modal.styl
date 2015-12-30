@@ -1,0 +1,67 @@
+/*
+* overlay
+*/
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+/*
+* modalPoetry
+*/
+
+#modalPoetry {
+    position: fixed;
+    top: 15%;
+    left: 25%;
+    width: 50%;
+    height: 70%;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px #000000;
+    box-sizing: border-box;
+    padding: 32px 25px 25px;
+    .modalPoetryContents {
+        overflow-y: scroll;
+        height: 100%;
+        > li {
+            > dl {
+                dt {
+                    font-size: 16px;
+                    padding: 0 0 15px;
+                }
+            }
+        }
+    }
+    .modalPoetryClose {
+        position: absolute;
+        top: 0px;
+        left: 5px;
+        cursor: pointer;
+        img {
+            width: 15px;
+        }
+    }
+    .modalPoetryCtrl {
+        > li {
+            position: absolute;
+            top: 40%;
+            cursor: pointer;
+            &.modalPoetryCtrlLeft {
+                left: -10%;
+            }
+            &.modalPoetryCtrlRight {
+                right: -10%;
+            }
+            img {
+                width: 50px;
+            }
+        }
+    }
+}
