@@ -64,7 +64,7 @@ module.exports = Marionette.ItemView.extend({
                 // ループ処理で、位置を指定
                 for(var i = 0; i < contentsLength; i++) {
                     $modalPoetryContents.find('li').eq(i).css({
-                        'width': contentsWidth,
+                        'width': contentsWidth - 15,
                         'left': contentsWidth * (i + count)
                     });
                 }
