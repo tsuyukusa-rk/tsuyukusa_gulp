@@ -41,12 +41,82 @@ module.exports = Marionette.ItemView.extend({
     */
     modalPoetry: function() {
 
+        // スライダーの定義
+        var slider = function() {
+
+            var
+                $modalPoetryContents = $('#modalPoetryContents'),
+                $modalPoetryCtrlLeft = $('#modalPoetryCtrlLeft'),
+                $modalPoetryCtrlRight = $('#modalPoetryCtrlRight'),
+                $modalPoetryClose = $('#modalPoetryClose'),
+                $overlay = $('#overlay'),
+                $modalPoetry = $('#modalPoetry'),
+                $audioTitle = $('.audioTitle'),
+                contentsWidth = $modalPoetryContents.width(),
+                contentsLength = $modalPoetryContents.find('li').length,
+                count = 0;
+
+            $modalPoetry
+                .hide()
+                .css('opacity', 1);
+
+            var positionAdd = function() {
+                // ループ処理で、位置を指定
+                for(var i = 0; i < contentsLength; i++) {
+                    $modalPoetryContents.find('li').eq(i).css({
+                        'width': contentsWidth,
+                        'left': contentsWidth * (i + count)
+                    });
+                }
+            };
+
+            // ロード時の位置指定
+            positionAdd();
+
+            // モーダルを出す
+            $audioTitle.on('click', function() {
+                var audioNum = $(this).attr('data-audioNum');
+                count = -(Number(audioNum) - 1);
+                positionAdd();
+                $overlay.fadeIn();
+                $modalPoetry.fadeIn();
+            });
+
+            // 戻る処理
+            $modalPoetryCtrlLeft.on('click', function() {
+                // 0より少なければプラス
+                if(count < 0) {
+                    count ++;
+                }
+                positionAdd();
+            });
+
+            // 進む処理
+            $modalPoetryCtrlRight.on('click', function() {
+                // アイテム数を以下でなければマイナス
+                if(count > -(contentsLength - 1)) {
+                    count --;
+                }
+                positionAdd();
+            });
+
+            // 閉じる処理
+            $modalPoetryClose.on('click', function() {
+                $overlay.fadeOut();
+                $modalPoetry.fadeOut();
+            });
+
+        };
+
         // htmlを生成する
         var doBuild = function(json) {
 
             // templateを生成し、埋め込み
             var template = _.template('<% _.each(poetry, function(el, i){ %><li><dl><dt><%= el.title %></dt><dd><%= el.text %></dd></dl></li><% }); %>');
             $('#modalPoetryContents').html(template(json));
+
+            // sliderの整形
+            slider();
 
         };
 
