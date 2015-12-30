@@ -45,6 +45,7 @@ module.exports = Marionette.ItemView.extend({
         var slider = function() {
 
             var
+                // DOMを定義
                 $modalPoetryContents = $('#modalPoetryContents'),
                 $modalPoetryCtrlLeft = $('#modalPoetryCtrlLeft'),
                 $modalPoetryCtrlRight = $('#modalPoetryCtrlRight'),
@@ -52,34 +53,53 @@ module.exports = Marionette.ItemView.extend({
                 $overlay = $('#overlay'),
                 $modalPoetry = $('#modalPoetry'),
                 $audioTitle = $('.audioTitle'),
+                // 設定を取得
                 contentsWidth = $modalPoetryContents.width(),
                 contentsLength = $modalPoetryContents.find('li').length,
-                count = 0;
+                count = 0,
+                // hoverしていなければ消す
+                hoverFlg = false,
+                closeModal = function() {
+                    if(hoverFlg) {
+                        $overlay.fadeOut();
+                        $modalPoetry.fadeOut();
+                        $('body').off('click', closeModal);
+                    }
+                },
+                // ループ処理で、位置を指定
+                positionAdd = function() {
+                    for(var i = 0; i < contentsLength; i++) {
+                        $modalPoetryContents.find('li').eq(i).css({
+                            'width': contentsWidth - 15,
+                            'left': contentsWidth * (i + count)
+                        });
+                    }
+                };
 
+            // 初期設定
             $modalPoetry
                 .hide()
                 .css('opacity', 1);
 
-            var positionAdd = function() {
-                // ループ処理で、位置を指定
-                for(var i = 0; i < contentsLength; i++) {
-                    $modalPoetryContents.find('li').eq(i).css({
-                        'width': contentsWidth - 15,
-                        'left': contentsWidth * (i + count)
-                    });
-                }
-            };
-
             // ロード時の位置指定
             positionAdd();
 
-            // モーダルを出す
+            // モーダルを出すイベント
             $audioTitle.on('click', function() {
+
+                // 位置を調整する
                 var audioNum = $(this).attr('data-audioNum');
                 count = -(Number(audioNum) - 1);
                 positionAdd();
+
+                // 表示する
                 $overlay.fadeIn();
                 $modalPoetry.fadeIn();
+
+                // フラグをfalseにして、非表示イベントを紐付ける
+                hoverFlg = false;
+                $('body').on('click', closeModal);
+
             });
 
             // 戻る処理
@@ -104,6 +124,14 @@ module.exports = Marionette.ItemView.extend({
             $modalPoetryClose.on('click', function() {
                 $overlay.fadeOut();
                 $modalPoetry.fadeOut();
+            });
+
+            // hover判定
+            $modalPoetry.on('mouseenter', function() {
+                hoverFlg = false;
+            });
+            $modalPoetry.on('mouseleave', function() {
+                hoverFlg = true;
             });
 
         };
