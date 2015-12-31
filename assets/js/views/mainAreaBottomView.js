@@ -87,14 +87,17 @@ module.exports = Marionette.ItemView.extend({
             // モーダルを出すイベント
             $audioTitle.on('click', function() {
 
+                // 表示する
+                $overlay.fadeIn();
+                $modalPoetry.fadeIn();
+
                 // 位置を調整する
                 var audioNum = $(this).attr('data-audioNum');
                 count = -(Number(audioNum) - 1);
                 positionAdd();
 
-                // 表示する
-                $overlay.fadeIn();
-                $modalPoetry.fadeIn();
+                // 幅を再取得
+                contentsWidth = $modalPoetryContents.width();
 
                 // フラグをfalseにして、非表示イベントを紐付ける
                 hoverFlg = false;

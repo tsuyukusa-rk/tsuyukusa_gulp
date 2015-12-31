@@ -30,7 +30,7 @@
     }
     dd {
         font-size: 12px;
-        padding: 5px 25px 20px;
+        padding: 0px 25px 20px;
     }
 }
 .mainAreaBottomRight{
@@ -42,30 +42,41 @@
         @extend .mainAreaBottomTitle
     }
     > dd {
+        > p {
+            width: 447px;
+            margin: 0 20px 0 0;
+            float: left;
+            font-size: 12px;
+        }
         > ul {
             overflow: hidden;
-            width: 369px;
+            width: 163px;
+            float: right;
             margin: 0 auto;
         }
     }
 }
 .playBox {
     width: 163px;
-    float: left;
-    padding: 0 20px 12px 0;
-    margin: 5px 22px 0 0;
-    border-right: 1px solid $borderColor;
+    // float: left;
+    padding: 0 0px 15px 0;
+    margin: 15px 0px 0 0;
+    border-bottom: 1px solid $borderColor;
+    &:first-child {
+        margin: 0;
+    }
     &:last-child {
         border: none;
         padding-right: 0;
         margin-right: 0;
     }
     dl {
+        overflow: hidden;
         dt.audioTitle {
             font-size: 13px;
             line-height: 1;
-            text-align: center;
-            padding: 8px 0 15px;
+            // text-align: center;
+            padding: 0px 0 15px;
             cursor: pointer;
         }
         dd {

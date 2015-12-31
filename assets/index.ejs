@@ -53,40 +53,40 @@
             <ul id="blogAreaArticle" class="blogAreaArticle"></ul>
             <!-- //ブログ記事 -->
 
+            <!-- データベースに追加する -->
+            <form method="post" action="/blog">
+                <input type="hidden" value="uploadDate" name="uploadDate">
+                <input type="hidden" value="category" name="category">
+                <input type="hidden" value="[title]" name="title">
+                <input type="hidden" value="text" name="text">
+                <input type="hidden" value="imgSrc1" name="imgSrc1">
+                <input type="hidden" value="4" name="index">
+                <input type="submit">
+            </form>
+            <!-- //データベースに追加する -->
+
+            <!-- データベースから削除する -->
+            <form method="post" action="/blog/5677d768c74416a92f4132a5?_method=delete">
+                <input type="submit">
+            </form>
+            <!-- //データベースから削除する -->
+
+            <!-- データベースを更新する -->
+            <form method="post" action="/blog/5677d6edc74416a92f4132a4?_method=put">
+                <input type="hidden" value="uploadDate2" name="uploadDate">
+                <input type="hidden" value="category2" name="category">
+                <input type="hidden" value="[title2]" name="title">
+                <input type="hidden" value="text2" name="text">
+                <input type="hidden" value="imgSrc12" name="imgSrc1">
+                <input type="hidden" value="42" name="index">
+                <input type="submit">
+            </form>
+            <!-- //データベースを更新する -->
+
         </section>
         <!-- //blogページコンテンツ -->
 
     </div>
-
-    <!-- データベースに追加する -->
-    <form method="post" action="/blog">
-        <input type="hidden" value="uploadDate" name="uploadDate">
-        <input type="hidden" value="category" name="category">
-        <input type="hidden" value="[title]" name="title">
-        <input type="hidden" value="text" name="text">
-        <input type="hidden" value="imgSrc1" name="imgSrc1">
-        <input type="hidden" value="4" name="index">
-        <input type="submit">
-    </form>
-    <!-- //データベースに追加する -->
-
-    <!-- データベースから削除する -->
-    <form method="post" action="/blog/5677d768c74416a92f4132a5?_method=delete">
-        <input type="submit">
-    </form>
-    <!-- //データベースから削除する -->
-
-    <!-- データベースを更新する -->
-    <form method="post" action="/blog/5677d6edc74416a92f4132a4?_method=put">
-        <input type="hidden" value="uploadDate2" name="uploadDate">
-        <input type="hidden" value="category2" name="category">
-        <input type="hidden" value="[title2]" name="title">
-        <input type="hidden" value="text2" name="text">
-        <input type="hidden" value="imgSrc12" name="imgSrc1">
-        <input type="hidden" value="42" name="index">
-        <input type="submit">
-    </form>
-    <!-- //データベースを更新する -->
 
     <!--  フッター  -->
     <div id="footer" class="footer"></div>
