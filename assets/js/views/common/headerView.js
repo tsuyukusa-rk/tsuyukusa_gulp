@@ -12,6 +12,39 @@ module.exports = Marionette.ItemView.extend({
     // イベントを定義
     events: {
 
+    },
+
+    // レンダリング後の処理
+    onRender: function() {
+
+        // topにもどる処理
+        this.returnTop();
+
+    },
+
+    // topにもどる処理
+    returnTop: function() {
+
+        var $returnTop = $('#returnTop');
+
+        // スクロール位置を取得して、ボタンを出し分ける
+        var scrollPosition;
+        $(window).on('scroll', function() {
+            scrollPosition = $(this).scrollTop();
+            if(scrollPosition > 300) {
+                $returnTop.fadeIn();
+            } else {
+                $returnTop.fadeOut();
+            }
+        });
+
+        // クリックした時に一番上に
+        $returnTop.on('click', function() {
+            $('html,body').animate({
+                scrollTop: 0
+            }, 1000);
+        });
+
     }
 
 });

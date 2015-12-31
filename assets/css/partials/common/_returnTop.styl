@@ -1,0 +1,30 @@
+.returnTop{
+    cursor: pointer;
+    background-color: #777777;
+    width: 50px;
+    height: 40px;
+    /* border-radius: 6px; */
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    text-align: center;
+    padding: 4px 0 0;
+    color: #fff;
+    opacity: 0.4;
+    img {
+        width: 30px;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+    }
+    &:hover {
+        animation: float 1s linear infinite;
+        -webkit-animation: float 1s linear infinite;
+    }
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, -10px); }
+    100% { transition: translate(0, 10px);  }
+}
