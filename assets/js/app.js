@@ -1,11 +1,11 @@
 $(function() {
 
-    // es2015お試し
-    var human = require('./es2015/class');
-    var people = require('./es2015/classExtends');
-    human.helloStatic();
-    var human = new human('kondo');
-    var people = new people('kondo');
+    // // es2015お試し
+    // var human = require('./es2015/class');
+    // var people = require('./es2015/classExtends');
+    // human.helloStatic();
+    // var human = new human('kondo');
+    // var people = new people('kondo');
 
     var app = new Marionette.Application();
 

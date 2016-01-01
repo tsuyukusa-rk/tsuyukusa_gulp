@@ -68,7 +68,13 @@ module.exports = Marionette.ItemView.extend({
             thisId = $target.attr('id'),
             tab01 = 'tabLiveSchedule',
             tab02 = 'tabBiography',
-            tab03 = 'tabBlog';
+            tab03 = 'tabDiscography',
+            tab04 = 'tabBlog';
+
+        // ディスコグラフィのタブが押された時、準備中のため、処理しない
+        if(thisId == tab03) {
+            return;
+        }
 
         // 一旦activeクラスをクリアする
         $(this.el).find('li').removeClass('active');
@@ -82,9 +88,9 @@ module.exports = Marionette.ItemView.extend({
         // バイオグラフィーのタブの時
             $('#' + tab02).addClass('active');
             $('.biography').show();
-        } else if(thisId == tab03) {
+        } else if(thisId == tab04) {
         // ブログのタブが押された時
-            $('#' + tab03).addClass('active');
+            $('#' + tab04).addClass('active');
             // ブログページ遷移のためルーターを起動
             Backbone.history.navigate('blog', true);
         }

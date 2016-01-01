@@ -81,6 +81,12 @@ transformFn(num) {
                 @extend .tabTitles li:hover:after
             }
         }
+        &.tabDisabled:hover {
+            color: #777777;
+            &:after {
+                display: none;
+            }
+        }
     }
 }
 .tabContents {
