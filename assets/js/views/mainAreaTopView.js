@@ -15,7 +15,7 @@ module.exports = Marionette.ItemView.extend({
 
     // イベント紐付け
     events: {
-        'click li': 'changeTabCtrl'
+        'click #tabTitles > li': 'changeTabCtrl'
     },
 
     // レンダリング後の処理
