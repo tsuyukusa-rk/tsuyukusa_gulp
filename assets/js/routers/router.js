@@ -16,6 +16,9 @@ module.exports = Backbone.Router.extend({
         $('#mainArea').show();
         $('#blogArea').hide();
 
+        // ページをフェードで表出
+        $('body').fadeIn(1500);
+
     },
 
     // blogページ用

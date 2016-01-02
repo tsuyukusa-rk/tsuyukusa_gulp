@@ -50,8 +50,6 @@ $(function() {
         // ブラウザのハッシュ監視
         Backbone.history.start();
 
-        $('.pageIntro').hide();
-
     };
 
     // appをレンダリング
