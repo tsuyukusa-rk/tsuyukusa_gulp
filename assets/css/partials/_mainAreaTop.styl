@@ -123,3 +123,39 @@ transformFn(num) {
         }
     }
 }
+
+// 960px以下のレイアウト
+@media screen and (max-width: 960px) {
+
+    .mainAreaTopLeft {
+        width: 100%;
+        float: none;
+        border-right: none;
+    }
+    .mainAreaTopRight {
+        display: none;
+    }
+
+}
+
+// 640px以下のレイアウト
+@media screen and (max-width: 640px) {
+
+    .tabTitles {
+        li {
+            width: 33%;
+            &:first-child {
+                width: 33%;
+            }
+        }
+    }
+
+    .tabContents {
+        .tabContentsLi {
+            width: 92%;
+            height: 300px;
+            padding: 20px 4%;
+        }
+    }
+
+}

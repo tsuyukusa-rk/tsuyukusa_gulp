@@ -131,3 +131,76 @@
         }
     }
 }
+
+// 960px以下のレイアウト
+@media screen and (max-width: 960px) {
+
+    .mainAreaBottomLeft{
+        width: 100%;
+        float: none;
+    }
+    .mainAreaBottomRight{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 25px 25px;
+        float: none;
+        border-left: none;
+        border-top: 1px solid $borderColor;
+        > dt {
+            @extend .mainAreaBottomTitle
+        }
+        > dd {
+            > p {
+                width: 100%;
+                margin: 0;
+                float: none;
+                font-size: 12px;
+            }
+            > ul {
+                width: 100%;
+                float: none;
+                li {
+                    float: left;
+                }
+            }
+        }
+    }
+
+    .playBox {
+        width: 163px;
+        // float: left;
+        padding: 0;
+        margin: 15px 20px 0 0;
+        padding: 0 15px 0 0;
+        border-bottom: none;
+        border-right: 1px solid $borderColor;
+        &:first-child {
+            margin: 15px 20px 0 0;
+        }
+        &:last-child {
+            border: none;
+            padding: 0;
+            margin-right: 0;
+        }
+    }
+
+}
+
+// 640px以下のレイアウト
+@media screen and (max-width: 640px) {
+
+    .mainAreaBottomRight{
+        > dd {
+            > ul {
+                li {
+                    float: none;
+                }
+            }
+        }
+    }
+
+    .playBox {
+        border-right: none;
+    }
+
+}

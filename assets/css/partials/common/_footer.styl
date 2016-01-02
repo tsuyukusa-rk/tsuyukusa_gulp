@@ -32,3 +32,49 @@
         text-align: center;
     }
 }
+
+// 960px以下のレイアウト
+@media screen and (max-width: 960px) {
+
+    .footer{
+        > div{
+            width: 100%;
+            .twitterArea {
+                width: auto;
+                float: none;
+                text-align: center;
+            }
+            .footerContentsLeft {
+                width: 640px;
+                float: none;
+                padding: 0;
+                margin: 20px auto 0;
+            }
+        }
+        > p{
+            width: 100%;
+            margin: 60px auto 0;
+            font-size: 11px;
+            text-align: center;
+        }
+    }
+
+}
+
+// 640px以下のレイアウト
+@media screen and (max-width: 640px) {
+
+    .footer{
+        > div{
+            width: 94%;
+            margin: 0 3%;
+            .footerContentsLeft {
+                width: 100%;
+                float: none;
+                padding: 0;
+                margin: 20px 0 0;
+            }
+        }
+    }
+
+}
