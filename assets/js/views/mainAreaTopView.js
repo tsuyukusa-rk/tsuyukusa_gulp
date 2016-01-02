@@ -4,6 +4,9 @@ var mainAreaTopTmpl = require('../templates/mainAreaTopView');
 // ajax
 var scheduleModel = require('../models/scheduleModel');
 
+// ページ内リンク
+var scrollLink = require('../module/classScrollLink');
+
 module.exports = Marionette.ItemView.extend({
 
     // 監視対象DOM
@@ -53,6 +56,9 @@ module.exports = Marionette.ItemView.extend({
                 alert('エラーが発生しました。');
             }
         });
+
+        // ページ内リンク
+        var scrollLinkFn = new scrollLink();
 
     },
 
