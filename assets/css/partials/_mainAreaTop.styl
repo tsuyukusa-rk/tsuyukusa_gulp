@@ -142,8 +142,15 @@ transformFn(num) {
 @media screen and (max-width: 640px) {
 
     .tabTitles {
+        display: table;
         li {
+            box-sizing: border-box;
+            padding: 10px 2%;
             width: 33%;
+            display: table-cell;
+            height: 100%;
+            word-break: break-all;
+            min-height: 68px;
             &:first-child {
                 width: 33%;
             }
