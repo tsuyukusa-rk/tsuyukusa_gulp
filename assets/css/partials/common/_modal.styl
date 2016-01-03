@@ -79,3 +79,32 @@
         }
     }
 }
+
+// 640px以下のレイアウト
+@media screen and (max-width: 640px) {
+
+    #modalPoetry {
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        padding: 32px 3% 25px;
+        .modalPoetryClose {
+            top: 5px;
+            img {
+                width: 20px;
+            }
+        }
+        .modalPoetryCtrl {
+            > li {
+                &.modalPoetryCtrlLeft {
+                    left: -14%;
+                }
+                &.modalPoetryCtrlRight {
+                    right: -14%;
+                }
+            }
+        }
+    }
+
+}
