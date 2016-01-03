@@ -1,6 +1,9 @@
 // テンプレートを読み込む
 var footerTmpl = require('../../templates/common/footerView');
 
+// twitterウィジェット
+var widget = require('../../module/classTwitterWidget');
+
 module.exports = Marionette.ItemView.extend({
 
     // 監視対象DOM
@@ -11,6 +14,14 @@ module.exports = Marionette.ItemView.extend({
 
     // イベント紐付け
     events: {
+
+    },
+
+    // レンダリング後の処理
+    onRender: function() {
+
+        // twitterのレイアウト調整
+        var twitter = new widget();
 
     }
 

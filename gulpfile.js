@@ -45,7 +45,10 @@ gulp.task('ejsTemp', function() {
 
 // stylusの設定
 gulp.task('css', function() {
-    gulp.src(path.assets + '/css/**/*.styl')
+    gulp.src([
+        path.assets + '/css/**/*.styl',
+        '!' + path.assets + '/css/**/_*.styl'
+    ])
         .pipe(plumber())
         .pipe(stylus())
         .pipe(gulp.dest(path.dest + '/css'));
