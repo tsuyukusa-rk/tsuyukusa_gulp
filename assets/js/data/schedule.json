@@ -1,6 +1,18 @@
 {
   "schedule": [
     {
+        "date": "2016/03/06（日）",
+        "place": "HIYOSHI Nap",
+        "url": "http://www.hiyoshinap.com/",
+        "ticket": "未定",
+        "time": [
+          {
+              "open": "未定",
+              "start": "未定"
+          }
+        ]
+    },
+    {
       "date": "2016/02/09（火）",
       "place": "下北沢 BREATH",
       "url": "http://breath335.com/",
