@@ -7,6 +7,9 @@ $(function() {
     // var human = new human('kondo');
     // var people = new people('kondo');
 
+    // ローディング画面をreactで実装
+    var reactRender = require('./jsxViews/reactRender');
+
     var app = new Marionette.Application();
 
     // ルーター

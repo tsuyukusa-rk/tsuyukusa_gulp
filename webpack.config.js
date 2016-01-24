@@ -10,7 +10,7 @@ module.exports = {
         filename: '[name].js'
     },
     resolve: {
-        extensions: ['', '.js', '.ejs'], //拡張子を省略できる
+        extensions: ['', '.js', '.ejs', '.jsx'], //拡張子を省略できる
         modulesDirectories: ['node_modules', "bower_components"],
         alias: {
         //bowerでインストールしたjqueryプラグインで以下にaliasを貼るとrequire('TweenMax');のようにパス無しでつかえる
@@ -22,7 +22,8 @@ module.exports = {
             { test: /\.html$/, loader: 'html-loader' },
             { test: /\.ejs$/, loader: 'ejs-loader' },
             { test: /\.html/, loader: "underscore-template-loader" },
-            { test: /\.js$/, exclude: /node_modules/, loader: "babel?presets[]=es2015" }
+            { test: /\.js$/, exclude: /node_modules/, loader: "babel?presets[]=es2015" },
+            { test: /\.jsx/, loader: "jsx-loader?harmony" }
         ]
     },
     plugins: [
