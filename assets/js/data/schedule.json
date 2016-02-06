@@ -25,6 +25,18 @@
       ]
     },
     {
+      "date": "2016/01/31（日）",
+      "place": "渋谷La.mama",
+      "url": "http://lamama.net/",
+      "ticket": "2000円（ドリンク別 600円）",
+      "time": [
+        {
+            "open": "18:00",
+            "start": "18:30"
+        }
+      ]
+    },
+    {
       "date": "2016/01/16（土）",
       "place": "HIYOSHI Nap",
       "url": "http://www.hiyoshinap.com/",
