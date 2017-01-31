@@ -37,7 +37,7 @@ module.exports = {
     dest: './dist'
   },
   webpack: {
-    entry: './assets/js/app.js',
+    entry: ['./assets/js/app.js'],
     assets: './assets/js/**/*.js',
     dest: './dist/js'
   }
