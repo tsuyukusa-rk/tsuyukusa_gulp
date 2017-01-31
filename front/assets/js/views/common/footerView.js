@@ -4,7 +4,7 @@ var footerTmpl = require('../../templates/common/footerView');
 // twitterウィジェット
 var widget = require('../../module/classTwitterWidget');
 
-module.exports = Marionette.ItemView.extend({
+module.exports = Marionette.CompositeView.extend({
 
     // 監視対象DOM
     el: '#footer',

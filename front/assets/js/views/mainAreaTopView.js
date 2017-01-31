@@ -7,7 +7,7 @@ var scheduleModel = require('../models/scheduleModel');
 // ページ内リンク
 var scrollLink = require('../module/classScrollLink');
 
-module.exports = Marionette.ItemView.extend({
+module.exports = Marionette.CompositeView.extend({
 
     // 監視対象DOM
     //イベントに紐付けるセレクターはelと相対的に指定出来る

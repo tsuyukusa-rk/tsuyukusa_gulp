@@ -13,7 +13,7 @@ var _ = require('underscore');
 // model
 var blogAreaArticleModel = require('../../models/blog/blogAreaArticleModel');
 
-module.exports = Marionette.ItemView.extend({
+module.exports = Marionette.CompositeView.extend({
 
     el: '#blogAreaArticle',
 

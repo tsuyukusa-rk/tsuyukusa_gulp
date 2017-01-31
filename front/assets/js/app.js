@@ -1,3 +1,7 @@
+window.jQuery = require('jquery');
+window.$ = require('jquery');
+window.Backbone = require('backbone');
+window.Marionette = require('backbone.marionette');
 $(function() {
 
     // // es2015お試し
@@ -10,8 +14,6 @@ $(function() {
     // ローディング画面をreactで実装
     var reactRender = require('./jsxViews/reactRender');
 
-    var app = new Marionette.Application();
-
     // ルーター
     var router = require('./routers/router');
 
@@ -23,39 +25,38 @@ $(function() {
     var mainAreaTopView = require('./views/mainAreaTopView');
     var mainAreaBottomView = require('./views/mainAreaBottomView');
 
-    // リージョン
-    app.addRegions({
-        'main': '#mainArea'
-    });
-
-    // レンダリング後の処理を定義
-    app.render = function() {
-
+    var app = new Marionette.Application({
+      onStart: function(options) {
         // ルーターをインスタンス
         this.router = new router();
 
         // headerをインスタンス
-        this.headerView = new headerView();
+        this.headerView = new headerView(options);
         this.headerView.render();
 
         // mainAreaTopをインスタンス
-        this.mainAreaTopView = new mainAreaTopView();
+        this.mainAreaTopView = new mainAreaTopView(options);
         this.mainAreaTopView.render();
 
         // mainAreaBottomをインスタンス
-        this.mainAreaBottomView = new mainAreaBottomView();
+        this.mainAreaBottomView = new mainAreaBottomView(options);
         this.mainAreaBottomView.render();
 
         // footerViewをインスタンス
-        this.footerView = new footerView();
+        this.footerView = new footerView(options);
         this.footerView.render();
 
         // ブラウザのハッシュ監視
         Backbone.history.start();
+      }
+    });
 
-    };
+    // リージョン
+    // app.addRegions({
+    //     'main': '#mainArea'
+    // });
 
     // appをレンダリング
-    app.render();
+    app.start();
 
 });

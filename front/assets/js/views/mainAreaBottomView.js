@@ -10,7 +10,7 @@ var poetryModel = require('../models/poetryModel');
 // underscore
 var _ = require('underscore');
 
-module.exports = Marionette.ItemView.extend({
+module.exports = Marionette.CompositeView.extend({
 
     // 監視対象DOM
     el: '#mainAreaBottom',
